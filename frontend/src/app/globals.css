@@ -537,7 +537,7 @@
     background: var(--secondary);
     box-shadow: 0 4px 0 #9c244f;
   }
-  
+
   .cabinet-buttons {
     display: flex;
     gap: 13px;
@@ -639,6 +639,88 @@
   .nav-links a:hover {
     color: var(--primary);
   }
+  
+  /* Footer */
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: #0c0d0b;
+  }
+
+  .footer-main {
+    min-height: 153px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .footer-main p {
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-family: var(--font-pixel);
+    font-size: 6px;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .footer-links a,
+  .footer-links button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    transition: color 180ms ease;
+  }
+
+  .footer-links a:hover,
+  .footer-links button:hover {
+    color: var(--primary);
+  }
+
+  .footer-system {
+    min-height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid var(--border);
+    color: #5f655b;
+    font-family: var(--font-pixel);
+    font-size: 5px;
+  }
+
+  .footer-system span:last-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-system i {
+    width: 5px;
+    height: 5px;
+    flex-shrink: 0;
+    background: var(--primary);
+  }
+  
+  .footer-credit {
+    color: var(--muted);
+    transition: color 180ms ease;
+  }
+
+  .footer-credit:hover {
+    color: var(--primary);
+  }
+
+  .footer-credit-separator {
+    color: var(--border-strong);
+  }
 }
 
 /* =========================================================
@@ -670,5 +752,28 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+/* Responsive footer */
+
+@media (max-width: 700px) {
+  .footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 32px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-system {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 16px;
+    line-height: 2;
   }
 }
