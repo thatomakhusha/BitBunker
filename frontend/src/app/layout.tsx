@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Press_Start_2P } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -32,10 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${spaceGrotesk.variable} ${pressStart2P.variable}`}
-      >
+    <html lang="en" className={`${spaceGrotesk.variable} ${pressStart2P.variable}`}>
+      <body>
+        <Navbar />
         {children}
       </body>
     </html>

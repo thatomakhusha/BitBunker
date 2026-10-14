@@ -35,7 +35,7 @@ const Navbar = () => {
 
                 {/* Play Now button */}
                 <Link href="/#arcade" className="arcade-button text-[0.5rem]">
-                    PLAY NOW
+                    PLAY NOW &#8594;
                 </Link>
             </nav>
         </header>
