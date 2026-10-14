@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 /* =========================================================
@@ -90,6 +91,7 @@
     min-height: 100vh;
     margin: 0;
     background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
@@ -204,6 +206,8 @@
    ========================================================= */
 
 @layer components {
+  /* General cards */
+
   .arcade-card {
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
@@ -228,24 +232,17 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-
     border: 1px solid var(--primary);
     border-radius: 0;
-
     padding: 0 21px;
-
     background: var(--primary);
     color: var(--background);
-
     font-family: var(--font-press-start), monospace;
     font-size: 8px;
     font-weight: 400;
-
     cursor: pointer;
-
     box-shadow: 4px 4px 0
       color-mix(in srgb, var(--primary) 30%, transparent);
-
     transition:
       transform 120ms ease,
       box-shadow 120ms ease,
@@ -254,7 +251,6 @@
 
   .arcade-button:hover {
     transform: translate(2px, 2px);
-
     box-shadow: 2px 2px 0
       color-mix(in srgb, var(--primary) 30%, transparent);
   }
@@ -272,17 +268,12 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-sm);
-
     padding: 12px 20px;
-
     background-color: transparent;
     color: var(--foreground);
-
     font-weight: 600;
-
     transition:
       border-color 180ms ease,
       color 180ms ease,
@@ -295,20 +286,16 @@
     color: var(--primary);
   }
 
-  /* Form input */
+  /* Form inputs */
 
   .arcade-input {
     width: 100%;
     min-height: 48px;
-
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-sm);
-
     padding: 12px 14px;
-
     background-color: var(--background);
     color: var(--foreground);
-
     outline: none;
     transition: border-color 180ms ease;
   }
@@ -331,9 +318,9 @@
 
   .brand-icon {
     position: relative;
+    display: block;
     width: 38px;
     height: 30px;
-    display: block;
   }
 
   .brand-icon i {
@@ -343,78 +330,92 @@
   }
 
   .brand-icon i:nth-child(1) {
-    left: 5px;
     top: 4px;
+    left: 5px;
     width: 28px;
     height: 5px;
   }
 
   .brand-icon i:nth-child(2) {
-    left: 0;
     top: 9px;
+    left: 0;
     width: 38px;
     height: 5px;
   }
 
   .brand-icon i:nth-child(3) {
-    left: 4px;
     top: 14px;
+    left: 4px;
     width: 7px;
     height: 12px;
   }
 
   .brand-icon i:nth-child(4) {
-    right: 4px;
     top: 14px;
+    right: 4px;
     width: 7px;
     height: 12px;
   }
 
   .brand-icon i:nth-child(5) {
-    left: 15px;
     top: 17px;
+    left: 15px;
     width: 8px;
     height: 9px;
   }
 
-  /* Cabinet */
+  /* =======================================================
+     ARCADE CABINET
+     ======================================================= */
+
   .cabinet-wrap {
     position: relative;
+    isolation: isolate;
     width: 100%;
     max-width: 430px;
     margin-inline: auto;
-    isolation: isolate;
   }
+
   .cabinet {
     position: relative;
     width: 330px;
     margin: auto;
-    padding: 18px 24px 28px;
     border: 2px solid #555e4e;
+    padding: 18px 24px 28px;
     background: var(--surface);
-    clip-path: polygon(8% 0, 92% 0, 100% 6%, 94% 100%, 6% 100%, 0 6%);
+    clip-path: polygon(
+      8% 0,
+      92% 0,
+      100% 6%,
+      94% 100%,
+      6% 100%,
+      0 6%
+    );
     box-shadow: inset 0 0 0 6px #141512;
   }
+
   .cabinet-top {
-    height: 51px;
     display: flex;
+    height: 51px;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 20px;
     border: 2px solid var(--primary);
+    padding-inline: 20px;
     color: var(--primary);
     font-family: var(--font-pixel);
     font-size: 11px;
-    box-shadow: inset 0 0 20px color-mix(in srgb, var(--primary) 12%, transparent);
+    box-shadow: inset 0 0 20px
+      color-mix(in srgb, var(--primary) 12%, transparent);
   }
+
   .cabinet-top i {
     width: 7px;
     height: 7px;
     background: var(--secondary);
   }
 
-  
   /* Cabinet screen */
+
   .cabinet-screen {
     position: relative;
     height: 260px;
@@ -434,7 +435,7 @@
       to bottom,
       transparent 0,
       transparent 3px,
-      rgba(255, 255, 255, 0.05) 4px
+      rgb(255 255 255 / 5%) 4px
     );
   }
 
@@ -443,7 +444,7 @@
     justify-content: space-between;
     padding: 12px;
     color: var(--secondary);
-    font-family: var(--font-press-start), monospace;
+    font-family: var(--font-pixel);
     font-size: 6px;
   }
 
@@ -458,7 +459,8 @@
   .pixel-bunker i {
     height: 16px;
     background: var(--primary);
-    box-shadow: 0 0 8px color-mix(in srgb, var(--primary) 50%, transparent);
+    box-shadow: 0 0 8px
+      color-mix(in srgb, var(--primary) 50%, transparent);
   }
 
   .pixel-bunker i:nth-child(1),
@@ -481,14 +483,14 @@
   }
 
   .screen-copy strong {
-    color: white;
-    font-family: var(--font-press-start), monospace;
+    color: var(--foreground);
+    font-family: var(--font-pixel);
     font-size: 16px;
   }
 
   .screen-copy small {
     color: var(--secondary);
-    font-family: var(--font-press-start), monospace;
+    font-family: var(--font-pixel);
     font-size: 7px;
     animation: blink 1.2s steps(1) infinite;
   }
@@ -499,7 +501,8 @@
     }
   }
 
-  /* Control panel */
+  /* Cabinet control panel */
+
   .cabinet-controls {
     display: flex;
     height: 92px;
@@ -525,7 +528,6 @@
     background: #78806f;
   }
 
-  
   .joystick i {
     position: absolute;
     z-index: 1;
@@ -557,13 +559,14 @@
   }
 
   /* Coin slot */
+
   .coin-slot {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 12px 0;
     color: var(--muted);
-    font-family: var(--font-press-start), monospace;
+    font-family: var(--font-pixel);
     font-size: 6px;
   }
 
@@ -582,7 +585,9 @@
     background: #050605;
     filter: blur(5px);
   }
-  
+
+  /* Cabinet ambient glow */
+
   .cabinet-wrap::before {
     position: absolute;
     z-index: -1;
@@ -595,13 +600,15 @@
     );
   }
 
+  /* Floating arcade labels */
+
   .orbit {
     position: absolute;
     z-index: 2;
     border: 1px solid var(--border);
     padding: 9px;
     background: var(--background);
-    font-family: var(--font-press-start), monospace;
+    font-family: var(--font-pixel);
     font-size: 7px;
   }
 
@@ -619,7 +626,9 @@
     transform: rotate(5deg);
   }
 
-  /* Navigation */
+  /* =======================================================
+     NAVIGATION
+     ======================================================= */
 
   .nav-links {
     display: flex;
@@ -629,7 +638,7 @@
 
   .nav-links a {
     color: var(--muted);
-    font-family: var(--font-press-start), monospace;
+    font-family: var(--font-pixel);
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.08em;
@@ -639,8 +648,10 @@
   .nav-links a:hover {
     color: var(--primary);
   }
-  
-  /* Footer */
+
+  /* =======================================================
+     FOOTER
+     ======================================================= */
 
   .site-footer {
     border-top: 1px solid var(--border);
@@ -648,8 +659,8 @@
   }
 
   .footer-main {
-    min-height: 153px;
     display: flex;
+    min-height: 153px;
     align-items: center;
     justify-content: space-between;
     gap: 32px;
@@ -670,8 +681,8 @@
 
   .footer-links a,
   .footer-links button {
-    padding: 0;
     border: 0;
+    padding: 0;
     background: transparent;
     color: var(--muted);
     font-family: var(--font-pixel);
@@ -685,8 +696,8 @@
   }
 
   .footer-system {
-    min-height: 53px;
     display: flex;
+    min-height: 53px;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
@@ -708,7 +719,7 @@
     flex-shrink: 0;
     background: var(--primary);
   }
-  
+
   .footer-credit {
     color: var(--muted);
     transition: color 180ms ease;
@@ -721,40 +732,151 @@
   .footer-credit-separator {
     color: var(--border-strong);
   }
+
+  /* =======================================================
+     SECTION HEADINGS
+     ======================================================= */
+
+  .section-heading {
+    margin-bottom: 48px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--muted);
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow span {
+    color: var(--primary);
+  }
+
+  .section-heading h2 {
+    margin: 16px 0 12px;
+    color: var(--foreground);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+  }
+
+  .section-heading p {
+    max-width: 620px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* =======================================================
+     HOW IT WORKS / ABOUT
+     ======================================================= */
+
+  .how-section {
+    padding-block: 90px 120px;
+  }
+
+  .how-section h2 {
+    margin: 14px 0 9px;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .content-shell {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 60px;
+  }
+
+  .step {
+    position: relative;
+  }
+
+  .step:not(:last-child)::after {
+    position: absolute;
+    top: 34px;
+    right: -43px;
+    width: 28px;
+    border-top: 1px dashed var(--border);
+    content: "";
+  }
+
+  .step-icon {
+    position: relative;
+    display: grid;
+    width: 72px;
+    height: 72px;
+    place-items: center;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .step-icon span {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    padding: 5px;
+    background: var(--primary);
+    color: var(--background);
+    font-family: var(--font-pixel);
+    font-size: 6px;
+  }
+
+  .step-icon i {
+    color: var(--primary);
+    font-size: 25px;
+    font-style: normal;
+  }
+
+  .step h3 {
+    margin: 25px 0 11px;
+    color: var(--foreground);
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .step p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+  }
 }
 
 /* =========================================================
    RESPONSIVE ADJUSTMENTS
    ========================================================= */
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .arcade-container {
-    width: min(
-      calc(100% - 32px),
-      var(--container-width)
-    );
+    width: min(calc(100% - 32px), var(--container-width));
   }
 
-  .pixel-label {
-    font-size: 8px;
+  .content-shell {
+    width: min(calc(100% - 30px), 1180px);
   }
-}
 
-/* =========================================================
-   REDUCED MOTION ACCESSIBILITY
-   ========================================================= */
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .step:not(:last-child)::after {
+    display: none;
   }
 }
-/* Responsive footer */
 
 @media (max-width: 700px) {
   .footer-main {
@@ -775,5 +897,46 @@
     justify-content: center;
     padding-block: 16px;
     line-height: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .pixel-label {
+    font-size: 8px;
+  }
+
+  .how-section {
+    padding-block: 64px 80px;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .cabinet {
+    width: min(330px, 100%);
+  }
+
+  .orbit-one {
+    left: -4px;
+  }
+
+  .orbit-two {
+    right: -4px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
