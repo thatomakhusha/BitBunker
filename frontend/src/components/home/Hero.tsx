@@ -51,11 +51,51 @@ const Hero = () => {
                 </div>
 
                    <div className="cabinet-wrap" aria-label="Retro arcade cabinet illustration">
+                        
+                        <div className="orbit orbit-one">+100</div>
+                        <div className="orbit orbit-two">HI!</div>
+
+                        <div className="cabinet-shadow" />
+
                         <div className="cabinet">
                             <div className="cabinet-top">
                                 <span>BITBUNKER</span>
                                 <i />
                             </div>
+                            
+                            <div className="cabinet-screen">
+                                <div className="screen-top">
+                                    <span>1UP</span>
+                                    <span>009800</span>
+                                </div>
+
+                                <div className="pixel-bunker">
+                                    <i /><i /><i /><i /><i /><i />
+                                    <i /><i /><i /><i /><i /><i />
+                                </div>
+
+                                <div className="screen-copy">
+                                    <strong>READY?</strong>
+                                    <small>INSERT COIN</small>
+                                </div>
+                            </div>
+
+                            <div className="cabinet-controls">
+                                <div className="joystick">
+                                    <i />
+                                </div>
+
+                                <div className="cabinet-buttons">
+                                    <i />
+                                    <i />
+                                </div>
+                            </div>
+
+                            <div className="coin-slot">
+                                <span>PLAYER_01</span>
+                                <i />
+                            </div>
+
                         </div>
                     </div>
             </div>
