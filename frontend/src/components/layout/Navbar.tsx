@@ -24,9 +24,9 @@ const Navbar = () => {
                         ARCADE
                     </Link>
                         
-                    <Link href="/leaderboard">
+                    {/* <Link href="/leaderboard">
                         LEADERBOARD
-                    </Link>
+                    </Link> */}
 
                     <Link href="/#about">
                         ABOUT

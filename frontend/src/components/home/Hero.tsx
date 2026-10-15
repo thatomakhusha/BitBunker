@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { games } from "@/lib/games";
 
 const Hero = () => {
     return ( 
@@ -34,7 +35,7 @@ const Hero = () => {
 
                     <div className="flex gap-8 pt-6">
                         <div className="flex flex-col gap-1">
-                            <span className="font-pixel text-2xl">5</span>
+                            <span className="font-pixel text-2xl">{games.length}</span>
                             <span className="pixel-label text-muted">GAMES</span>
                         </div>
 

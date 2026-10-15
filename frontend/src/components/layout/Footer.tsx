@@ -26,7 +26,7 @@ function Footer() {
                 <nav className="footer-links" aria-label="Footer navigation">
                     <Link href="/#arcade">ARCADE</Link>
 
-                    <Link href="/leaderboard">LEADERBOARD</Link>
+                    {/* <Link href="/leaderboard">LEADERBOARD</Link> */}
 
                     <Link href="/#about">ABOUT</Link>
 
