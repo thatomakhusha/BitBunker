@@ -853,7 +853,210 @@
     font-size: 14px;
     line-height: 1.65;
   }
+    /* =======================================================
+     GAME CARDS
+     ======================================================= */
+
+  .game-card {
+    --accent: var(--primary);
+    position: relative;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .game-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 65%, var(--border));
+    box-shadow: 0 12px 30px rgba(0,0,0,.22), 4px 4px 0 color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+
+  .game-card.accent-secondary { --accent: var(--secondary); }
+  .game-card.accent-tertiary { --accent: var(--tertiary); }
+
+  .card-topline {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-family: var(--font-pixel);
+    font-size: 6px;
+  }
+
+  .card-light {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-light i {
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+  }
+
+  .game-art {
+    position: relative;
+    height: 154px;
+    margin: 17px 0 22px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border));
+    background-color: #11130f;
+    background-image: linear-gradient(color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px);
+    background-size: 16px 16px;
+    color: var(--accent);
+  }
+
+  .game-art::after {
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    content: "";
+    background: var(--accent);
+  }
+
+  .art-numbers b,
+  .art-arrows b,
+  .art-quiz b {
+    font-family: var(--font-pixel);
+    font-size: 50px;
+    text-shadow: 5px 5px 0 color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+
+  .art-numbers i,
+  .art-arrows i {
+    position: absolute;
+    padding: 5px;
+    border: 1px solid var(--accent);
+    font-family: var(--font-pixel);
+        font-size: 6px;
+    font-style: normal;
+  }
+  .art-numbers i:nth-of-type(1) { top: 23px; left: 42px; }
+  .art-numbers i:nth-of-type(2) { right: 39px; bottom: 25px; }
+
+  .art-rps b { font-size: 54px; }
+  .art-rps i { width: 35px; height: 35px; border: 6px solid var(--accent); }
+  .art-rps .block-b { transform: rotate(45deg); }
+
+  .art-arrows b { font-size: 39px; }
+  .art-arrows b:nth-child(2) { color: color-mix(in srgb, var(--accent) 40%, var(--foreground)); }
+  .art-arrows i { bottom: 20px; }
+
+  .art-hangman { flex-direction: column; }
+  .art-hangman .gallows { width: 54px; height: 73px; border-top: 5px solid var(--accent); border-left: 5px solid var(--accent); }
+  .art-hangman .gallows::after { display: block; width: 22px; height: 22px; margin: 12px 0 0 27px; border: 4px solid var(--accent); border-radius: 50%; content: ""; }
+  .art-hangman b { font-family: var(--font-pixel); font-size: 8px; letter-spacing: 5px; }
+
+  .art-letters i,
+  .art-wordle i,
+  .art-quiz i {
+    display: grid;
+    place-items: center;
+    width: 41px;
+    height: 41px;
+    border: 2px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 11%, var(--surface));
+    font-family: var(--font-pixel);
+    font-style: normal;
+    font-size: 11px;
+    box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+  .art-letters i:nth-child(1) { transform: translateY(12px) rotate(-7deg); }
+  .art-letters i:nth-child(2) { transform: translateY(-14px) rotate(4deg); }
+  .art-letters i:nth-child(3) { transform: translateY(9px) rotate(8deg); }
+
+  .art-grid { width: 130px; height: 110px; margin-inline: auto; display: grid; grid-template-columns: repeat(2, 1fr); }
+  .art-grid i { display: grid; place-items: center; border: 1px solid var(--accent); font-style: normal; font-size: 35px; }
+
+  .art-quiz b { margin-right: 10px; }
+  .art-quiz i { width: 31px; height: 31px; font-size: 7px; }
+  .art-wordle { gap: 5px; }
+  .art-wordle i { width: 36px; height: 36px; font-size: 8px; }
+  .art-wordle i:nth-child(2), .art-wordle i:nth-child(4) { background: var(--accent); color: var(--background); }
+
+  .art-connect { display: grid; grid-template-columns: repeat(4, 27px); gap: 7px; }
+  .art-connect i { width: 27px; height: 27px; border: 3px solid var(--accent); border-radius: 50%; }
+  .art-connect i:nth-child(3n) { background: var(--accent); }
+
+  .art-memory { display: grid; grid-template-columns: repeat(3, 36px); gap: 8px; }
+  .art-memory i {
+    display: grid;
+    place-items: center;
+    height: 44px;
+    border: 2px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 11%, var(--surface));
+    font-family: var(--font-pixel);
+    font-style: normal;
+    font-size: 11px;
+    box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+  .art-memory i.flipped { background: var(--accent); color: var(--background); }
+
+  .art-cards i { width: 58px; height: 78px; padding: 9px; border: 2px solid var(--accent); background: var(--foreground); color: var(--background); font-family: var(--font-pixel); font-size: 8px; font-style: normal; }
+  .art-cards i:nth-child(2) { margin-left: -28px; transform: rotate(8deg); color: var(--secondary); }
+  .art-cards b { font-family: var(--font-pixel); font-size: 18px; }
+
+  .card-copy h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .card-copy p {
+    min-height: 46px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .game-meta {
+    display: flex;
+    gap: 35px;
+    margin: 20px 0;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-pixel);
+    font-size: 6px;
+  }
+
+  .game-meta span {
+    display: grid;
+    gap: 6px;
+  }
+
+  .game-meta small {
+    color: var(--muted);
+    font-size: 5px;
+  }
+
+  .card-action {
+    width: 100%;
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--font-pixel);
+    font-size: 7px;
+  }
+
+  .card-action:not(:disabled) {
+    cursor: pointer;
+    color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 36%, var(--border));
+  }
 }
+
 
 /* =========================================================
    RESPONSIVE ADJUSTMENTS

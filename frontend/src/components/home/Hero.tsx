@@ -34,7 +34,7 @@ const Hero = () => {
 
                     <div className="flex gap-8 pt-6">
                         <div className="flex flex-col gap-1">
-                            <span className="font-pixel text-2xl">10</span>
+                            <span className="font-pixel text-2xl">5</span>
                             <span className="pixel-label text-muted">GAMES</span>
                         </div>
 
