@@ -1,5 +1,5 @@
 import UsernameForm from "@/components/player/UsernameForm";
-
+import Link from "next/link";
 const CallsignPage = () => {
     return ( 
         <main className="arcade-container py-20">
@@ -16,6 +16,19 @@ const CallsignPage = () => {
                 <p className="text-muted mt-4">Claim your name. Enter the arcade. No account required.</p>
                 
                 <UsernameForm/>
+                <div className="mt-6">
+                    <Link href="/" className="font-pixel text-[0.4rem] text-muted hover:text-primary">
+                        ALREADY PLAYING? RETURN TO ARCADE &#8594;
+                    </Link>
+                </div>
+                <div className="mt-8 border-t border-border pt-8">
+                    <p className="font-pixel text-[0.4rem]">
+                        NO EMAIL. NO PASSWORD. JUST PLAY.
+                    </p>
+                    <p className="text-[0.6rem] text-muted mt-4">
+                        Your guest identity is remembered on this browser. Clearing browser data or switching devices may prevent us from restoring it.
+                    </p>
+                </div>
             </section>
             
         </main>

@@ -51,7 +51,7 @@ export default function UsernameForm() {
                 </span>
                 <div>
                     {error ? (
-                        <p className="font-pixel text-[0.5rem] text-secondary">{error}</p>
+                        <p className="font-pixel text-[0.4rem] text-secondary">{error}</p>
                     ) : (
                         <div>
                             <p className="font-pixel text-[0.4rem]">
