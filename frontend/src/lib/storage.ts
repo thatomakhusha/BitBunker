@@ -4,6 +4,22 @@ export function isValidCallsign(name: string) : boolean{
 
 const CALLSIGN_KEY = "bitbunker.callsign";
 
-export function getCallsign(){
-    return localStorage.getItem(CALLSIGN_KEY);
+export function getCallsign() : string | null {
+    try{
+        return localStorage.getItem(CALLSIGN_KEY);
+    } catch {
+        return null;
+    }
+}
+
+export function saveCallsign(name: string) : boolean{
+    if (!isValidCallsign(name)){
+        return false;
+    }
+    try{ 
+        localStorage.setItem(CALLSIGN_KEY, name);
+        return true;
+    } catch{
+        return false;
+    }
 }
