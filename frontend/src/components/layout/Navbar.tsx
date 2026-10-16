@@ -34,7 +34,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Play Now button */}
-                <Link href="/#arcade" className="arcade-button text-[0.5rem]">
+                <Link href="/callsign" className="arcade-button text-[0.5rem]">
                     PLAY NOW &#8594;
                 </Link>
             </nav>
