@@ -2,8 +2,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -36,10 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${pressStart2P.variable}`} data-scroll-behavior="smooth">
       <body>
-        <Navbar />
-        
         {children}
-        <Footer/>
       </body>
     </html>
   );
