@@ -8,9 +8,9 @@ const Hero = () => {
 
                 <div className="flex flex-col gap-6">
 
-                    <div className="flex items-center gap-3">
-                        <div className="h-3 w-3 bg-primary animate-pulse" />
-                        <p className="text-muted font-pixel text-[0.5rem]">
+                    <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 bg-primary animate-pulse" />
+                        <p className="text-muted font-pixel text-[0.48rem]">
                             SYSTEM ONLINE | V1.0.0
                         </p>
                     </div>
