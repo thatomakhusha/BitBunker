@@ -20,15 +20,15 @@ export default function CallsignLayout({
                     BIT<span className="text-primary">BUNKER</span>
                 </span>
             </Link>
-            <span className="font-pixel text-[0.5rem] text-muted">GUEST ACCESS // NO ACCOUNT REQUIRED</span>
+            <span className="font-pixel text-[0.4rem] text-muted">GUEST ACCESS // NO ACCOUNT REQUIRED</span>
         </header>
         {children}
         <footer className="arcade-container ">
             <div className="footer-system">
-                <span>
+                <span className="text-[0.4rem]">
                     BITBUNKER PLAYER TERMINAL // READY
                 </span>
-                <span>
+                <span className="text-[0.4rem]">
                     SECURE GUEST SESSION PROTOTYPE
                 </span>
             </div>
