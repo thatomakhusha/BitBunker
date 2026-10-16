@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PlayerIdentity from "../player/PlayerIdentity";
 
 const Navbar = () => {
     return ( 
@@ -37,6 +38,7 @@ const Navbar = () => {
                 <Link href="/callsign" className="arcade-button text-[0.5rem]">
                     PLAY NOW &#8594;
                 </Link>
+                <PlayerIdentity />
             </nav>
         </header>
     );
