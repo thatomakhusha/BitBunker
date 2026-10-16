@@ -1055,6 +1055,57 @@
     color: var(--accent);
     border-color: color-mix(in srgb, var(--accent) 36%, var(--border));
   }
+
+    /* =======================================================
+     PLAYER AVATAR / CALLSIGN ICON
+     ======================================================= */
+
+  .callsign-icon {
+    position: relative;
+    width: 70px;
+    margin: 29px auto 20px;
+  }
+
+  .callsign-icon .player-avatar {
+    margin: auto;
+  }
+
+  .callsign-icon > b {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 23px;
+    height: 23px;
+    display: grid;
+    place-items: center;
+    background: var(--secondary);
+    color: var(--background);
+    font-family: var(--font-pixel);
+    font-size: 9px;
+  }
+
+  .player-avatar {
+    position: relative;
+    width: 31px;
+    height: 31px;
+    display: block;
+    border: 1px solid color-mix(in srgb, var(--primary) 45%, var(--border));
+    background: #0d120e;
+  }
+
+  .player-avatar i {
+    position: absolute;
+    display: block;
+    background: var(--primary);
+  }
+
+  .player-avatar i:nth-child(1) { width: 9px; height: 8px; left: 10px; top: 6px; }
+  .player-avatar i:nth-child(2) { width: 17px; height: 5px; left: 6px; top: 14px; }
+  .player-avatar i:nth-child(3) { width: 23px; height: 6px; left: 3px; bottom: 3px; }
+  .player-avatar.large { width: 48px; height: 48px; }
+  .player-avatar.large i:nth-child(1) { width: 12px; height: 11px; left: 17px; top: 8px; }
+  .player-avatar.large i:nth-child(2) { width: 24px; height: 8px; left: 11px; top: 20px; }
+  .player-avatar.large i:nth-child(3) { width: 34px; height: 10px; left: 6px; bottom: 5px; }
 }
 
 

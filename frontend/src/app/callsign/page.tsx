@@ -10,7 +10,11 @@ const CallsignPage = () => {
                         <span className="text-primary">SYSTEM ONLINE</span> | PLAYER REGISTRATION
                     </p>
                 </div>
-                <h1 className="font-bold uppercase text-4xl sm:text-5xl leading-none mt-8">
+                <div className="callsign-icon" aria-hidden="true">
+                    <span className="player-avatar large"><i /><i /><i /></span>
+                    <b>?</b>
+                </div>
+                <h1 className="font-bold uppercase text-4xl sm:text-5xl leading-none">
                     Choose your <br/> <span className="text-primary">Callsign</span>
                 </h1>
                 <p className="text-muted mt-4">Claim your name. Enter the arcade. No account required.</p>
