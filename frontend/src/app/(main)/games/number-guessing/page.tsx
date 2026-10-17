@@ -2,6 +2,7 @@ import GamePageLayout from "@/components/games/GamePageLayout";
 import RunLog from "@/components/games/RunLog";
 import GameScreen from "@/components/games/GameScreen";
 import AttemptsCounter from "@/components/games/AttemptsCounter";
+import SystemMessage from "@/components/games/SystemMessage";
 
 const NumberGuessingPage = () => {
     return ( 
@@ -24,6 +25,9 @@ const NumberGuessingPage = () => {
             >
                 {/* MOCK: replace with values from the API */}
                 <AttemptsCounter remaining={2} total={7} />
+                
+                {/* MOCK: replace with the message from the API */}
+                <SystemMessage message="MAKE YOUR FIRST GUESS" />
             </GameScreen>
             
         </GamePageLayout>
