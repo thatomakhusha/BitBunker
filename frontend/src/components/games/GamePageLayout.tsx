@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 export default function GamePageLayout(
-    { title, number, subtitle, statusLabel, statusValue,  children }: { title: string; number: number; subtitle: string; statusLabel: string; statusValue: string; children: React.ReactNode }){
+    { title, number, subtitle, statusLabel, statusValue, steps, howTitle, howText, sidePanel, children }: { title: string; number: number; subtitle: string; statusLabel: string; statusValue: string; steps: string[]; howTitle: string; howText: React.ReactNode; sidePanel: React.ReactNode; children: React.ReactNode }){
         const words = title.split(" ");
         const lastWord = words.pop();
         const firstWords = words.join(" ");
+
         return (
             <main className="arcade-container py-10">
 
@@ -46,7 +47,34 @@ export default function GamePageLayout(
                         {children}
                     </div>
                     <div>
-                        <p>sidebar</p>
+                        <div className="border border-border bg-surface p-6">
+                            <p className="font-pixel text-[0.5rem] text-primary">
+                                HOW TO PLAY
+                            </p>
+                            <h2 className="mt-6 text-2xl uppercase">
+                                {howTitle}
+                            </h2>
+                            <p className="mt-4 text-sm text-muted">
+                                {howText}
+                            </p>
+                            <div className="mt-6 border-t border-border pt-6">
+                                
+                                {steps.map((step, index) =>  (
+                                    <div className="mt-4 flex gap-4 text-sm" key={step}>
+                                        <span className="font-pixel text-[0.5rem] text-tertiary">
+                                            {String(index + 1).padStart(2, "0")}
+                                        </span>
+                                        <span className="text-muted">
+                                            {step}
+                                        </span>
+                                    </div>
+                                ))}
+                                
+                            </div>
+                        </div>
+                        <div className="mt-6">
+                            {sidePanel}
+                        </div>
                         <Link href="/#arcade" className="mt-6 block font-pixel text-[0.5rem] text-primary">
                             &#8592; BACK TO ARCADE
                         </Link>
