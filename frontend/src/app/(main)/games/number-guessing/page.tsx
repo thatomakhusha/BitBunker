@@ -1,5 +1,6 @@
 import GamePageLayout from "@/components/games/GamePageLayout";
 import RunLog from "@/components/games/RunLog";
+import GameScreen from "@/components/games/GameScreen";
 
 const NumberGuessingPage = () => {
     return ( 
@@ -14,9 +15,17 @@ const NumberGuessingPage = () => {
             howText={<>The bunker has generated a number between <strong className="text-foreground">1 and 100</strong>. You have seven attempts to find it.</>} 
             sidePanel={<RunLog entries={[]} />}
         >
-            <p>
-                hello
-            </p>
+            <GameScreen 
+                label="BITBUNKER // CODEBREAKER" 
+                status="SIGNAL STABLE"
+                footerLeft="PLAYER_01"
+                footerRight="SESSION // LOCAL"
+            >
+                <p>
+                    hello
+                </p>
+            </GameScreen>
+            
         </GamePageLayout>
        
      );

@@ -43,7 +43,7 @@ export default function GamePageLayout(
                 </div>
                 
                 <div className="mt-12 grid gap-6 lg:grid-cols-3">
-                    <div className="border border-border bg-surface p-4 lg:col-span-2">
+                    <div className="lg:col-span-2">
                         {children}
                     </div>
                     <div>
