@@ -1,6 +1,7 @@
 import GamePageLayout from "@/components/games/GamePageLayout";
 import RunLog from "@/components/games/RunLog";
 import GameScreen from "@/components/games/GameScreen";
+import AttemptsCounter from "@/components/games/AttemptsCounter";
 
 const NumberGuessingPage = () => {
     return ( 
@@ -21,9 +22,8 @@ const NumberGuessingPage = () => {
                 footerLeft="PLAYER_01"
                 footerRight="SESSION // LOCAL"
             >
-                <p>
-                    hello
-                </p>
+                {/* MOCK: replace with values from the API */}
+                <AttemptsCounter remaining={2} total={7} />
             </GameScreen>
             
         </GamePageLayout>
