@@ -2,7 +2,7 @@ import GamePageLayout from "@/components/games/GamePageLayout";
 
 const NumberGuessingPage = () => {
     return ( 
-       <GamePageLayout title="Number Guessing" number={1} subtitle="Crack the hidden code before your attempts run out.">
+       <GamePageLayout title="Number Guessing" number={1} subtitle="Crack the hidden code before your attempts run out." statusLabel="GAME STATUS" statusValue="IN PROGRESS">
             <p>
                 hello
             </p>
