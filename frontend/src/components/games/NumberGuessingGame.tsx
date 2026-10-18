@@ -21,6 +21,12 @@ const statusText = {
     LOST: "RUN OVER"
 }
 
+const messageColor = {
+    IN_PROGRESS: "text-tertiary",
+    WON: "text-primary",
+    LOST: "text-secondary"
+}
+
 export default function NumberGuessingGame(){
     const [attemptsRemaining, setAttemptsRemaining] = useState(7);
     const [message, setMessage] = useState("MAKE YOUR FIRST GUESS");
@@ -88,7 +94,7 @@ export default function NumberGuessingGame(){
                 <AttemptsCounter remaining={attemptsRemaining} total={7} />
 
                 {/* MOCK: replace with the message from the API */}
-                <SystemMessage message={message} />
+                <SystemMessage message={message} color={messageColor[status]}/>
 
                 {/* MOCK: Guess will call the API later */}
                 <GuessInput min={1} max={100} onGuess={handleGuess} disabled={status !== "IN_PROGRESS"}/>
