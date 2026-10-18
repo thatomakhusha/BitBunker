@@ -50,8 +50,16 @@ export default function NumberGuessingGame(){
             guess: value,
             hint: hintText[result.hint]
         }, ...log])
-     }
+    }
 
+    async function handlePlayAgain() {
+        const result = await startGame();
+        setGameId(result.gameId);
+        setAttemptsRemaining(result.attemptsRemaining);
+        setStatus("IN_PROGRESS");
+        setMessage("MAKE YOUR FIRST GUESS");
+        setLog([]);
+    }
     return(
         <GamePageLayout 
             title="Number Guessing" 
@@ -78,7 +86,11 @@ export default function NumberGuessingGame(){
 
                 {/* MOCK: Guess will call the API later */}
                 <GuessInput min={1} max={100} onGuess={handleGuess} disabled={status !== "IN_PROGRESS"}/>
-
+                {status !== "IN_PROGRESS" && (
+                    <div className="mt-8 text-center">
+                        <button className="arcade-button" onClick={handlePlayAgain}>PLAY AGAIN &#8594;</button>
+                    </div>
+                )}
             </GameScreen>
 
         </GamePageLayout>
