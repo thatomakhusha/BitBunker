@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { startGame, guess } from "./api";
+import { startGame, guess } from "@/lib/api";
+
 
 // describe = the test class. Everything inside belongs to it.
 describe("Number Guessing mock", () => {

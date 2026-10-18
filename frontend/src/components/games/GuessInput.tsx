@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function GuessInput(
-    { min, max } : {min: number; max: number}
+    { min, max, onGuess, disabled } : {min: number; max: number, onGuess: (value: number) => void, disabled: boolean}
 ){
     const [value, setValue] = useState("");
 
@@ -23,9 +23,10 @@ export default function GuessInput(
                     value={value}
                     onChange={(event) => setValue(event.target.value)}
                     placeholder="00"
+                    disabled={disabled}
                     className="h-16 w-full flex-1 border border-border-strong bg-background px-4 text-center font-pixel text-2xl outline-none placeholder:text-muted focus:border-tertiary"
                 />
-                <button className="arcade-button px-10" disabled={!isValid}>
+                <button className="arcade-button px-10" disabled={disabled || !isValid} onClick={() => onGuess(guess)}>
                     GUESS &#8594;
                 </button>
             </div>
