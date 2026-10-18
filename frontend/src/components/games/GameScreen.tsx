@@ -7,6 +7,7 @@ export default function GameScreen(
                 {label}
                 <span className="flex items-center gap-2">
                     <i className="h-1.5 w-1.5 bg-primary" />
+                    {status}
                 </span>
             </div>
             <div className="mt-4 min-h-112 border-8 border-background bg-[#09120c] p-6">
