@@ -17,7 +17,7 @@ export const games: Game[] = [
         slug: "rock-paper-scissors",
         title: "Rock Paper Scissors",
         summary: "Beat the computer in a best-of-three showdown.",
-        status: "coming-soon",
+        status: "playable",
     },
     {
         slug: "higher-or-lower",

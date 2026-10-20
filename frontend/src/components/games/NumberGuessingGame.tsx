@@ -80,7 +80,7 @@ export default function NumberGuessingGame(){
             statusLabel="GAME STATUS" 
             statusValue={statusText[status]}
             steps={["Enter your best guess.", "Read the system hint.", "Adjust and try again."]} 
-            howTitle="Crack the code." 
+            howTitle="CRACK THE CODE" 
             howText={<>The bunker has generated a number between <strong className="text-foreground">1 and 100</strong>. You have seven attempts to find it.</>} 
             sidePanel={<RunLog entries={log} />}
         >
