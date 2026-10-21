@@ -26,18 +26,8 @@ const messageColor = {
 export default function RPSGame(){
     const [message, setMessage] = useState("SELECT YOUR WEAPON");
     return(
-        <GamePageLayout
-            title="ROCK PAPER SCISSORS" 
-            number={2} 
-            subtitle="Best of 3, Best of 5, Best of 7 wins. Read the machine and choose wisely.." 
-            statusLabel="GAME STATUS" 
-            statusValue={statusText[status]}
-            steps={[" Select a weapon.", "CPU reveals its move.", "First to three wins."]} 
-            howTitle="BEAT THE MACHINE." 
-            howText={<>Choose your move. <strong className="text-foreground">Rock crushes scissors, scissors cut paper, and paper covers rock.</strong></>} 
-            sidePanel={<RunLog entries={log} />}
-        >
-
-        </GamePageLayout>
+        <div>
+            
+        </div>
     )
 }
