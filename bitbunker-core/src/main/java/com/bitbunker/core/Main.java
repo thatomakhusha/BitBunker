@@ -4,7 +4,7 @@ package com.bitbunker.core;
 import com.bitbunker.core.console.NumberGuessConsole;
 import java.util.Scanner;
 import com.bitbunker.core.console.RPSConsole;
-
+import com.bitbunker.core.console.HigherLowerConsole;
 public class Main {
 
     public static void main(String[] args) {
@@ -36,7 +36,8 @@ public class Main {
                     rpsGame.play();
                     break;
                 case 3:
-                    System.out.println("Coming Soon");
+                    HigherLowerConsole higherLowerGame  = new HigherLowerConsole(scanner);
+                    higherLowerGame.play();
                     break;
                 case 0:
                     System.out.println("Thanks for playing");
