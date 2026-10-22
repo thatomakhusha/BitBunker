@@ -1,65 +1,52 @@
 
 package com.bitbunker.core;
 
-import com.bitbunker.core.common.GameStatus;
-import com.bitbunker.core.guessing.Hint;
-import com.bitbunker.core.guessing.NumberGuessGame;
+import com.bitbunker.core.console.NumberGuessConsole;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        NumberGuessGame game = new NumberGuessGame(1, 100, 7);
         Scanner scanner = new Scanner(System.in);
-
-        while (game.getStatus() == GameStatus.IN_PROGRESS) {
-
-            System.out.printf(
-                "Enter a guess (between %d-%d), %d attempts left: ",
-                game.getMin(),
-                game.getMax(),
-                game.getAttemptsLeft()
-            );
-
+        
+        int choice;
+        
+        do{
+            System.out.println("Pick a game:");
+            System.out.println("1. Number Guessing");
+            System.out.println("2. Rock Paper Scissors");
+            System.out.println("3. Higher or Lower");
+            System.out.println("0. Quit");
+            System.out.print("Enter choice: ");
             String input = scanner.nextLine();
-
-            try {
-                int number = Integer.parseInt(input);
-                Hint hint = game.guess(number);
-
-                switch (hint) {
-                    case TOO_LOW:
-                        System.out.println("Too low! Try again.");
-                        break;
-
-                    case TOO_HIGH:
-                        System.out.println("Too high! Try again.");
-                        break;
-
-                    case CORRECT:
-                        System.out.println("Correct! You guessed the number!");
-                        break;
-                }
-
-            } catch (NumberFormatException e) {
-                System.out.println("Enter a whole number.");
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+            
+            try{
+                choice = Integer.parseInt(input);
+            } catch (NumberFormatException e){
+                choice = -1;
             }
-        }
+            switch(choice){
+                case 1: 
+                    NumberGuessConsole guessGame = new NumberGuessConsole(scanner);
+                    guessGame.play();
+                    break;
+                case 2:
+                    System.out.println("Coming Soon");
+                    break;
+                case 3:
+                    System.out.println("Coming Soon");
+                    break;
+                case 0:
+                    System.out.println("Thanks for playing");
+                    break;
 
-        if (game.getStatus() == GameStatus.WON) {
-            System.out.printf(
-                "Congratulations! You guessed the number in %d attempts.%n",
-                game.getAttempts()
-            );
-        } else if (game.getStatus() == GameStatus.LOST) {
-            System.out.printf(
-                "Game over! The number was %d.%n",
-                game.getTarget()
-            );
-        }
+                default:
+                    System.out.println("Wrong entry!");
+                    break;
 
+            }
+        } while(choice != 0);
+        
         scanner.close();
     }
 }
