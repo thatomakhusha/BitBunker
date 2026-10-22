@@ -3,6 +3,7 @@ package com.bitbunker.core;
 
 import com.bitbunker.core.console.NumberGuessConsole;
 import java.util.Scanner;
+import com.bitbunker.core.console.RPSConsole;
 
 public class Main {
 
@@ -31,7 +32,8 @@ public class Main {
                     guessGame.play();
                     break;
                 case 2:
-                    System.out.println("Coming Soon");
+                    RPSConsole rpsGame = new RPSConsole(scanner);
+                    rpsGame.play();
                     break;
                 case 3:
                     System.out.println("Coming Soon");
