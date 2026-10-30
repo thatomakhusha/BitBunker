@@ -5,6 +5,8 @@ import com.bitbunker.core.console.NumberGuessConsole;
 import java.util.Scanner;
 import com.bitbunker.core.console.RPSConsole;
 import com.bitbunker.core.console.HigherLowerConsole;
+import com.bitbunker.core.console.HangmanConsole;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class Main {
             System.out.println("1. Number Guessing");
             System.out.println("2. Rock Paper Scissors");
             System.out.println("3. Higher or Lower");
+            System.out.println("4. Hangman");
             System.out.println("0. Quit");
             System.out.print("Enter choice: ");
             String input = scanner.nextLine();
@@ -38,6 +41,10 @@ public class Main {
                 case 3:
                     HigherLowerConsole higherLowerGame  = new HigherLowerConsole(scanner);
                     higherLowerGame.play();
+                    break;
+                case 4:
+                    HangmanConsole hangmanGame = new HangmanConsole(scanner);
+                    hangmanGame.play();
                     break;
                 case 0:
                     System.out.println("Thanks for playing");
