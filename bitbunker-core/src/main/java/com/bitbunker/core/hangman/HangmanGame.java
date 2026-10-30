@@ -104,4 +104,16 @@ public class HangmanGame {
     public GameStatus getStatus(){
         return status;
     }
+    
+    public String getMaskedWord(){
+        return buildMaskedWord();    
+    }
+    
+    public String getSecretWord(){
+        if (status == GameStatus.IN_PROGRESS) {
+            throw new IllegalStateException("The word can’t be revealed until the game is over");
+        }
+        
+        return secretWord;
+    }
 }
