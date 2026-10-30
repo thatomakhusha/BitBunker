@@ -1,7 +1,9 @@
 package com.bitbunker.core.hangman;
 
 import java.util.Set;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import com.bitbunker.core.common.GameStatus;
 
 public class HangmanGame {
@@ -31,5 +33,75 @@ public class HangmanGame {
         this.guessedLetters = new HashSet<>();
         this.maxWrongGuesses = maxWrongGuesses;
         this.status = GameStatus.IN_PROGRESS;
+    }
+    
+    private String buildMaskedWord(){
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < secretWord.length(); i++){
+            char c = secretWord.charAt(i);
+            if (i > 0) {
+                builder.append(' ');
+            }
+            if (guessedLetters.contains(c)) {
+                builder.append(c);
+            } else{
+                builder.append('_');
+            }
+        }
+        
+        return builder.toString();
+    }
+    
+    private boolean allLettersGuessed(){
+        for (int i = 0; i < secretWord.length(); i++) {
+            char c = secretWord.charAt(i);
+            if (!guessedLetters.contains(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public HangmanGuessResult guess(char letter){
+        if (status != GameStatus.IN_PROGRESS) {
+            throw new IllegalStateException("Game not in progress: the game is already over");
+        }
+        
+        char lower = Character.toLowerCase(letter);
+        
+        if (!Character.isLetter(lower)) {
+            throw new IllegalArgumentException("Not a letter: the guess must be a letter.");
+        }
+        
+        if (guessedLetters.contains(lower)) {
+            throw new IllegalArgumentException("Repeat: the letter has already been guessed.");
+        }
+        
+        guessedLetters.add(lower);
+        
+        List<Integer> positions = new ArrayList<>();
+        
+        for (int i = 0; i < secretWord.length(); i++) {
+            if (secretWord.charAt(i) == lower) {
+                positions.add(i);
+            }
+        }
+        
+        boolean correct = !positions.isEmpty();
+        
+        if (!correct) {
+            wrongGuesses++;
+        }
+        
+        if (wrongGuesses >= maxWrongGuesses) {
+            status = GameStatus.LOST;
+        } else if (allLettersGuessed()) {
+            status = GameStatus.WON;
+        }
+        return new HangmanGuessResult(correct, positions, buildMaskedWord(), wrongGuesses, status);
+    }
+    
+    public GameStatus getStatus(){
+        return status;
     }
 }
